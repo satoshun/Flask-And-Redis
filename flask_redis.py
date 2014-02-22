@@ -1,5 +1,9 @@
 import inspect
-import urlparse
+try:
+    import urlparse
+except:
+    from urllib import parse as urlparse
+    basestring = str
 
 from redis import StrictRedis
 from werkzeug.utils import import_string
